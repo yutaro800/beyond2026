@@ -1,18 +1,19 @@
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-    }
-  });
-}, { threshold: 0 });
+const fadeIns = document.querySelectorAll(".fade-in");
+const isHomePage = Boolean(document.querySelector(".hero"));
 
-document.querySelectorAll(".fade-in").forEach((el) => {
-  observer.observe(el);
-  const rect = el.getBoundingClientRect();
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
-    el.classList.add("is-visible");
-  }
-});
+if (isHomePage) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeIns.forEach((el) => observer.observe(el));
+} else {
+  fadeIns.forEach((el) => el.classList.add("is-visible"));
+}
 
 document.querySelectorAll(".news__list").forEach((list) => {
   list.querySelectorAll(".news__item").forEach((item) => {
