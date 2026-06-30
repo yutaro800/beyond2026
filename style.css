@@ -928,10 +928,12 @@ a.pagination__item:hover {
   max-width: 880px;
   margin: 40px auto 0;
   padding-left: 1.4em;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  padding-right: 0;
   line-height: 1.9;
+}
+
+.guidelines__list li + li {
+  margin-top: 24px;
 }
 
 .guidelines__list li::marker {
@@ -1496,6 +1498,39 @@ a.pagination__item:hover {
   .section__title-en--compact { font-size: clamp(40px, 12vw, 64px); }
   .section__title-ja { font-size: clamp(20px, 5.5vw, 30px); letter-spacing: 0.1em; }
   .section__title-ja--long { font-size: clamp(13px, 3.2vw, 22px); letter-spacing: 0.06em; }
+  .guidelines .section__title {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .guidelines .section__title-en {
+    font-size: clamp(28px, 8.5vw, 48px);
+    letter-spacing: 0;
+    padding-right: 12px;
+  }
+  .guidelines__list {
+    max-width: 100%;
+    padding-left: 1.2em;
+  }
+  .race-info .section__title {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .race-info .section__title-en {
+    font-size: clamp(36px, 11vw, 56px);
+    letter-spacing: 0;
+    padding-right: 12px;
+  }
+  .race-info__content {
+    max-width: 100%;
+  }
+  .race-info__sublist {
+    padding-left: 1.2em;
+  }
+  .race-info__pace {
+    overflow-wrap: anywhere;
+  }
   .concept__heading { font-size: 26px; }
   .entry__top {
     grid-template-columns: 1fr;

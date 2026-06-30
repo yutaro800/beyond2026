@@ -4,9 +4,15 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.classList.add("is-visible");
     }
   });
-}, { threshold: 0.2 });
+}, { threshold: 0 });
 
-document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+document.querySelectorAll(".fade-in").forEach((el) => {
+  observer.observe(el);
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    el.classList.add("is-visible");
+  }
+});
 
 document.querySelectorAll(".news__list").forEach((list) => {
   list.querySelectorAll(".news__item").forEach((item) => {
