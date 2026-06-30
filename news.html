@@ -13,11 +13,13 @@
 </head>
 <body>
 
+<!-- WordPress連携: このファイルを NEWS 一覧ページのテンプレート元とする（site/news.html） -->
+
 <header class="header">
   <a href="index.html" class="header__logo"><img src="images/beyond-logo.png" alt="BEYOND"></a>
   <nav class="header__nav">
     <a href="index.html#news">NEWS</a>
-    <a href="https://moshicom.com/148834" target="_blank" rel="noopener">ENTRY</a>
+    <a href="https://www.sportsentry.ne.jp/event/t/105905" target="_blank" rel="noopener">ENTRY</a>
     <a href="index.html#shop">SHOP</a>
     <a href="https://www.instagram.com/" class="header__icon" aria-label="Instagram" target="_blank" rel="noopener">
       <i class="fa-brands fa-instagram"></i>
@@ -31,24 +33,27 @@
     <span class="section__title-en" aria-hidden="true">NEWS</span>
     <span class="section__title-ja">ニュース</span>
   </h2>
+  <!-- WP:NEWS-LOOP-START — WP投稿ループで置き換え（posts_per_page: 10, 日付: Y/m/d） -->
   <ul class="news__list">
     <li class="news__item">
       <span class="news__date">2026/06/01</span>
-      <span class="news__headline">ニュースタイトルが入ります（仮）</span>
+      <a href="#" class="news__headline">ニュースタイトルが入ります（仮）</a>
     </li>
-    <li class="news__item">
+    <li class="news__item news__item--placeholder">
       <span class="news__date">2026/XX/XX</span>
       <span class="news__headline">ニュースタイトルが入ります（仮）</span>
     </li>
-    <li class="news__item">
+    <li class="news__item news__item--placeholder">
       <span class="news__date">2026/XX/XX</span>
       <span class="news__headline">ニュースタイトルが入ります（仮）</span>
     </li>
-    <li class="news__item">
+    <li class="news__item news__item--placeholder">
       <span class="news__date">2026/XX/XX</span>
       <span class="news__headline">ニュースタイトルが入ります（仮）</span>
     </li>
   </ul>
+  <!-- WP:NEWS-LOOP-END -->
+  <!-- WP:PAGINATION — paginate_links() 等で置き換え -->
   <nav class="pagination" aria-label="ページネーション">
     <span class="pagination__item is-current">1</span>
   </nav>

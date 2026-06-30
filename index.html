@@ -17,7 +17,7 @@
   <a href="#" class="header__logo"><img src="images/beyond-logo.png" alt="BEYOND"></a>
   <nav class="header__nav">
     <a href="#news">NEWS</a>
-    <a href="https://moshicom.com/148834" target="_blank" rel="noopener">ENTRY</a>
+    <a href="https://www.sportsentry.ne.jp/event/t/105905" target="_blank" rel="noopener">ENTRY</a>
     <a href="#shop">SHOP</a>
     <a href="https://www.instagram.com/" class="header__icon" aria-label="Instagram" target="_blank" rel="noopener">
       <i class="fa-brands fa-instagram"></i>
@@ -28,17 +28,10 @@
 <section class="hero">
   <div class="hero__visual hero__visual--photo">
     <div class="hero__slide is-active" style="background-image: url('images/hero-visual-01.jpg');"></div>
-    <div class="hero__slide" style="background-image: url('images/hero-visual-02.jpg');"></div>
-    <div class="hero__slide" style="background-image: url('images/hero-visual-03.jpg');"></div>
     <div class="hero__overlay">
-      <div class="hero__overlay-body">
-        <p class="hero__date">2026.12.29 SAT</p>
-        <h1 class="hero__title">BEYOND</h1>
-      </div>
-      <div class="hero__produced">
-        <p class="hero__produced-label">produced by</p>
-        <div class="hero__produced-logo"><img src="images/rslab-logo.png" alt="RUNNING SCIENCE LAB"></div>
-      </div>
+      <h1 class="hero__logo">
+        <img src="images/beyond-logo.png" alt="BEYOND">
+      </h1>
     </div>
   </div>
 </section>
@@ -49,24 +42,26 @@
     <span class="section__title-en" aria-hidden="true">NEWS</span>
     <span class="section__title-ja">ニュース</span>
   </h2>
+  <!-- WP:NEWS-LATEST — 最新4件を WP 投稿から動的取得。テンプレート元: site/news.html -->
   <ul class="news__list">
     <li class="news__item">
       <span class="news__date">2026/06/01</span>
-      <span class="news__headline">ニュースタイトルが入ります（仮）</span>
+      <a href="#" class="news__headline">ニュースタイトルが入ります（仮）</a>
     </li>
-    <li class="news__item">
+    <li class="news__item news__item--placeholder">
       <span class="news__date">2026/XX/XX</span>
       <span class="news__headline">ニュースタイトルが入ります（仮）</span>
     </li>
-    <li class="news__item">
+    <li class="news__item news__item--placeholder">
       <span class="news__date">2026/XX/XX</span>
       <span class="news__headline">ニュースタイトルが入ります（仮）</span>
     </li>
-    <li class="news__item">
+    <li class="news__item news__item--placeholder">
       <span class="news__date">2026/XX/XX</span>
       <span class="news__headline">ニュースタイトルが入ります（仮）</span>
     </li>
   </ul>
+  <!-- WP:NEWS-ARCHIVE-LINK — WP 連携後は NEWS 一覧ページ URL に差し替え -->
   <a href="news.html" class="news__more">ニュース一覧へ</a>
   </div>
 </section>
@@ -98,7 +93,7 @@
       </div>
       <div class="feature__col-body">
         <p>ターゲットタイム2時間35分から4時間まで</p>
-        <p>5分刻みでペーサーを配置します</p>
+        <p>5分刻みでペーサーを数名ずつ配置します</p>
       </div>
     </div>
     <div class="feature__col">
@@ -107,37 +102,42 @@
         <h3 class="feature__col-title">COURSE</h3>
       </div>
       <div class="feature__col-body">
-        <p>最大傾斜0％のオールフラットコース</p>
+        <p>傾斜0%のオールフラットコース</p>
         <p>折り返しは1度のみでロスは最小です</p>
       </div>
     </div>
   </div>
 
-  <div class="feature__intro">
-    <p class="feature__intro-lead">エントリーした瞬間からBeyondプロジェクトは始まる。</p>
-    <p class="feature__intro-sub">事前練習会、イベントで当日に向けたサポート。</p>
-  </div>
-
-  <div class="feature__island feature__island--road">
-    <h3 class="feature__island-title">ROAD TO BEYOND</h3>
-    <p>9月〜12月 BeyondまでのトレーニングをサポートするROAD TO BEYOND（距離走練習会）</p>
-    <p class="feature__island-target">対象：サブ2.75〜4</p>
-    <div class="feature__island-photo"><img src="images/feature-road-to-beyond.jpg" alt="ROAD TO BEYOND 練習会"></div>
-    <p class="feature__schedule-more">詳細はこちら</p>
-    <ul class="feature__schedule">
-      <li>9/19(土) Eペース2時間走</li>
-      <li>10/17(土) Eペース3時間走</li>
-      <li>11/21(土) Mペース2時間走</li>
-      <li>12/5(土) Mペース2時間走 + BEYOND FANFARE</li>
-    </ul>
-  </div>
-
-  <div class="feature__island feature__island--with-logo">
-    <div class="feature__island-logo"><img src="images/ist-track-club-logo.png" alt="Ist陸上競技部"></div>
-    <div class="feature__island-body">
-      <h3 class="feature__island-title">パーソナル指導<br>by Ist陸上競技部</h3>
-      <p>BEYONDだけに向けた完全個別指導。<br>WORKOUTでも講師を務めるIst陸上競技部が徹底サポート。</p>
-      <a href="#" class="feature__island-cta">お申し込みはこちら</a>
+  <div class="feature__split feature__split--support">
+    <div class="feature__col feature__col--road">
+      <div class="feature__col-head">
+        <div class="feature__col-photo"><img src="images/feature-road-to-beyond.jpg" alt="ROAD TO BEYOND 練習会"></div>
+        <h3 class="feature__col-title">ROAD TO BEYOND</h3>
+      </div>
+      <div class="feature__col-body">
+        <p>9月〜12月 BeyondまでのトレーニングをサポートするROAD TO BEYOND（距離走練習会）</p>
+        <p class="feature__col-body-sub">対象：サブ2.75〜4</p>
+        <p class="feature__schedule-more">詳細はこちら</p>
+        <ul class="feature__schedule">
+          <li>9/19(土) Eペース2時間走</li>
+          <li>10/17(土) Eペース3時間走</li>
+          <li>11/21(土) Mペース2時間走</li>
+          <li>12/5(土) Mペース2時間走</li>
+        </ul>
+      </div>
+    </div>
+    <div class="feature__col feature__col--coach">
+      <div class="feature__col-head">
+        <div class="feature__col-photo feature__col-photo--logo">
+          <img src="images/ist-track-club-logo.png" alt="Ist陸上競技部">
+        </div>
+        <h3 class="feature__col-title">PERSONAL TRAINING</h3>
+      </div>
+      <div class="feature__col-body">
+        <p>BEYONDだけに向けた完全個別指導。</p>
+        <p>WORKOUTでも講師を務めるIst陸上競技部が徹底サポート。</p>
+        <a href="#" class="feature__col-cta">お申し込みはこちら</a>
+      </div>
     </div>
   </div>
   </div>
@@ -152,18 +152,17 @@
 
   <div class="entry__top">
     <div class="entry__left entry__left--ticket">
-      <a href="https://moshicom.com/148834" class="entry__cta" target="_blank" rel="noopener">選手エントリー</a>
+      <a href="https://www.sportsentry.ne.jp/event/t/105905" class="entry__cta" target="_blank" rel="noopener">エントリーはこちら</a>
       <p class="entry__period-label">エントリー期間</p>
-      <p class="entry__period">８/７　１９：００<br>~１２/１　２３：５９迄</p>
+      <p class="entry__period">８/７　１９：００<br>~１１/３０　２３：５９迄</p>
       <div class="entry__left-buttons">
-        <a href="terms.html" class="entry__btn">大会要項</a>
-        <a href="#" class="entry__btn">競技注意事項</a>
+        <a href="race-info.html" class="entry__btn">大会要項</a>
         <a href="#" class="entry__btn">駐車場・バスチケット</a>
       </div>
     </div>
     <div class="entry__right">
       <h3 class="entry__event-name">BEYOND 2026</h3>
-      <p class="entry__event-date">2026.12.29 tue.<br>10:30start</p>
+      <p class="entry__event-date">2026.12.29 tue.<br>10:35start</p>
 
       <p class="entry__label">主催</p>
       <p class="entry__value">RUNNING SCIENCE LAB</p>
@@ -180,19 +179,17 @@
   <hr class="entry__divider">
 
   <div class="entry__extras">
-    <div class="entry__extra entry__extra--left">
-      <div class="entry__extra-tab">
-        <a href="#" class="entry__extra-btn">ペーサー募集</a>
-        <div class="entry__extra-bridge" aria-hidden="true"></div>
-      </div>
-      <div class="entry__extra-frame"></div>
+    <div class="entry__left entry__left--ticket entry__left--wide">
+      <a href="#" class="entry__cta">ペーサー募集</a>
+      <p class="entry__period-label">募集内容</p>
+      <p class="entry__period">レース当日、選手の目標タイムに合わせてペースをリードします。<br>サブ2:35〜4:00の各枠で募集しています。</p>
+      <p class="entry__note">※エントリー開始時期は決定次第お知らせします</p>
     </div>
-    <div class="entry__extra entry__extra--right">
-      <div class="entry__extra-tab">
-        <div class="entry__extra-bridge" aria-hidden="true"></div>
-        <a href="#" class="entry__extra-btn">ボランティア募集</a>
-      </div>
-      <div class="entry__extra-frame"></div>
+    <div class="entry__left entry__left--ticket entry__left--wide">
+      <a href="#" class="entry__cta">ボランティア募集</a>
+      <p class="entry__period-label">募集内容</p>
+      <p class="entry__period">大会運営を支えるボランティアを募集しています。<br>受付・給水・フィニッシュエリアなど、各ポジションでご参加いただけます。</p>
+      <p class="entry__note">※詳細は決定次第お知らせします</p>
     </div>
   </div>
   </div>
@@ -204,27 +201,39 @@
     <span class="section__title-en" aria-hidden="true">SHOP</span>
     <span class="section__title-ja">ショップ</span>
   </h2>
-  <div class="shop__grid">
-    <article class="shop__card">
-      <div class="shop__card-photo"></div>
-      <p class="shop__card-name">完走セット</p>
-      <p class="shop__card-price">¥3,500</p>
-    </article>
-    <article class="shop__card">
-      <div class="shop__card-photo"></div>
-      <p class="shop__card-name">靴下</p>
-      <p class="shop__card-price">¥2,500</p>
-    </article>
-    <article class="shop__card">
-      <div class="shop__card-photo"></div>
-      <p class="shop__card-name">オフィシャルキャップ</p>
-      <p class="shop__card-price">¥3,000</p>
-    </article>
-    <article class="shop__card">
-      <div class="shop__card-photo"></div>
-      <p class="shop__card-name">ステッカーセット</p>
-      <p class="shop__card-price">¥800</p>
-    </article>
+  <div class="shop__carousel">
+    <button type="button" class="shop__arrow shop__arrow--prev" aria-label="前の商品">
+      <span class="shop__arrow-icon" aria-hidden="true"></span>
+    </button>
+    <div class="shop__track">
+      <div class="shop__viewport">
+        <div class="shop__grid">
+        <article class="shop__card">
+          <div class="shop__card-photo"></div>
+          <p class="shop__card-name">完走セット</p>
+          <p class="shop__card-price">¥3,500</p>
+        </article>
+        <article class="shop__card">
+          <div class="shop__card-photo"></div>
+          <p class="shop__card-name">靴下</p>
+          <p class="shop__card-price">¥2,500</p>
+        </article>
+        <article class="shop__card">
+          <div class="shop__card-photo"></div>
+          <p class="shop__card-name">オフィシャルキャップ</p>
+          <p class="shop__card-price">¥3,000</p>
+        </article>
+        <article class="shop__card">
+          <div class="shop__card-photo"></div>
+          <p class="shop__card-name">ステッカーセット</p>
+          <p class="shop__card-price">¥800</p>
+        </article>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="shop__arrow shop__arrow--next" aria-label="次の商品">
+      <span class="shop__arrow-icon" aria-hidden="true"></span>
+    </button>
   </div>
   </div>
 </section>
@@ -232,8 +241,7 @@
 <section id="a1beyond" class="a1beyond section section--black">
   <div class="fade-in">
   <h2 class="section__title">
-    <span class="section__title-en section__title-en--compact" aria-hidden="true">A1 BEYOND</span>
-    <span class="section__title-ja">アマNo.1決定戦</span>
+    <span class="section__title-en section__title-en--compact">A1 BEYOND</span>
   </h2>
   <div class="a1beyond__logo"><img src="images/a1beyond-logo.png" alt="A1 BEYOND feat.FH"></div>
   <p class="a1beyond__text">昨年ハイレベルな争いが繰り広げられたアマチュアランナーNo.1を決めるレースA1BEYONDを今年も開催。<br>皆様の挑戦をお待ちしております。</p>
@@ -251,21 +259,18 @@
   </h2>
 
   <div class="sponsor__tier">
-    <h3 class="sponsor__tier-title">MAIN SPONSOR</h3>
     <div class="sponsor__logos sponsor__logos--main">
       <div class="sponsor__logo-frame img-frame">ロゴ</div>
     </div>
   </div>
 
   <div class="sponsor__tier">
-    <h3 class="sponsor__tier-title">GOLD SPONSOR</h3>
     <div class="sponsor__logos sponsor__logos--gold">
       <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="images/sponsor-orewa-sesshu.png" alt="オレは摂取す"></div>
     </div>
   </div>
 
   <div class="sponsor__tier">
-    <h3 class="sponsor__tier-title">SILVER SPONSOR</h3>
     <div class="sponsor__logos sponsor__logos--silver">
       <div class="sponsor__logo-frame img-frame">プレシジョン<br>（ロゴ未受領）</div>
       <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="images/ist-track-club-logo.png" alt="Ist陸上競技部"></div>
@@ -273,8 +278,8 @@
   </div>
 
   <div class="sponsor__tier">
-    <h3 class="sponsor__tier-title">BRONZE SPONSOR</h3>
     <div class="sponsor__logos sponsor__logos--bronze">
+      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="images/sponsor-reto.png" alt="RETO"></div>
       <div class="sponsor__logo-frame img-frame">中華そばナトリ<br>（ロゴ未受領）</div>
       <div class="sponsor__logo-frame img-frame">SAYSKY<br>（ロゴ未受領）</div>
     </div>
@@ -297,10 +302,10 @@
 
 <footer class="footer">
   <p class="footer__line">
-    <a href="#" class="footer__link">BEYOND</a><span class="footer__sep" aria-hidden="true">/</span><a href="#" class="footer__link">2025</a><span class="footer__sep" aria-hidden="true">/</span><a href="#" class="footer__link">2023</a>
+    <a href="index.html" class="footer__link">BEYOND</a><span class="footer__sep" aria-hidden="true">/</span><a href="#" class="footer__link">2025</a><span class="footer__sep" aria-hidden="true">/</span><a href="#" class="footer__link">2023</a>
   </p>
   <p class="footer__line footer__line--sub">
-    <a href="#" class="footer__link">CONTACT</a><span class="footer__sep" aria-hidden="true">/</span><a href="#" class="footer__link">RUNNING SCIENCE LAB</a>
+    <a href="https://rslab.tokyo/beyond-contact" class="footer__link" target="_blank" rel="noopener">CONTACT</a><span class="footer__sep" aria-hidden="true">/</span><a href="https://rslab.tokyo" class="footer__link" target="_blank" rel="noopener">RUNNING SCIENCE LAB</a>
   </p>
   <p class="footer__copyright">©RUNNING SCIENCE LAB</p>
 </footer>
