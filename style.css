@@ -1396,18 +1396,23 @@ a.pagination__item:hover {
 .a1beyond {
   position: relative;
   text-align: center;
-  overflow-x: visible;
+  overflow: hidden;
 }
 
 .a1beyond::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
-  aspect-ratio: 1024 / 576;
-  background: url("images/a1beyond-bg.png") center / 100% 100% no-repeat;
+  inset: 0;
+  background: url("images/a1beyond-bg-photo.png") center / cover no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.a1beyond::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
   pointer-events: none;
   z-index: 0;
 }
