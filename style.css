@@ -854,6 +854,12 @@ a.pagination__item:hover {
   padding-top: 24px;
 }
 
+.entry__left--ticket > .entry__period-label:first-child {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
 .entry__period {
   font-size: 16px;
   margin-top: 8px;
@@ -1489,26 +1495,18 @@ a.pagination__item:hover {
 }
 
 .sponsor__logo-frame--real {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  padding: 16px;
-}
-
-.sponsor__logos--gold .sponsor__logo-frame--real {
-  padding: 14px;
-}
-
-.sponsor__logos--silver .sponsor__logo-frame--real {
-  padding: 12px;
-}
-
-.sponsor__logos--bronze .sponsor__logo-frame--real {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
 }
 
 .sponsor__logo-frame--real img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: contain;
 }
 
@@ -1653,24 +1651,24 @@ a.pagination__item:hover {
     line-height: 1.85;
     text-align: left;
     text-wrap: pretty;
-    white-space: normal;
-    overflow-wrap: anywhere;
   }
   .concept__repeat br,
   .concept__br {
     display: none;
   }
   .concept__repeat p,
+  .concept__repeat-types,
   .concept__repeat-types p {
-    white-space: normal;
-    overflow-wrap: anywhere;
-  }
-  .concept__repeat p {
-    margin-bottom: 1em;
+    display: inline;
+    margin: 0;
+    padding: 0;
   }
   .concept__repeat-types {
-    margin: 1em 0;
-    padding: 0.8em 0;
+    margin: 0;
+    padding: 0;
+  }
+  .concept__repeat-close {
+    margin-top: 0;
   }
   .entry__top {
     grid-template-columns: 1fr;
