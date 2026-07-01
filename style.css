@@ -444,12 +444,46 @@ a.pagination__item:hover {
 }
 
 .concept__repeat {
-  max-width: 880px;
+  width: 100%;
+  max-width: 560px;
   margin: 0 auto;
-  font-size: 16px;
-  line-height: 2.4;
+  font-size: 15px;
+  line-height: 2;
   color: #999;
   letter-spacing: 0.02em;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.concept__repeat p {
+  margin: 0 0 1.2em;
+}
+
+.concept__repeat p:last-child {
+  margin-bottom: 0;
+}
+
+.concept__repeat-lead {
+  color: #bbb;
+}
+
+.concept__repeat-types {
+  margin: 1.6em 0;
+  padding: 1.2em 0;
+}
+
+.concept__repeat-types p {
+  margin: 0 0 0.6em;
+  line-height: 1.9;
+}
+
+.concept__repeat-types p:last-child {
+  margin-bottom: 0;
+}
+
+.concept__repeat-close {
+  margin-top: 1.6em;
+  color: #bbb;
 }
 
 /* Feature */
@@ -465,6 +499,18 @@ a.pagination__item:hover {
 
 .feature__split + .feature__split {
   margin-top: 0;
+}
+
+.feature__split:first-of-type .feature__col {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(50% - 12px);
+  min-width: min(100%, 320px);
+  max-width: 100%;
+}
+
+.feature__split:first-of-type .feature__col-body {
+  flex: 1;
 }
 
 .feature__split--support {
@@ -1084,6 +1130,14 @@ a.pagination__item:hover {
   color: #888;
 }
 
+.race-info--a1beyond .race-info__sublist {
+  padding-left: 0;
+}
+
+.race-info--a1beyond .race-info__sublist li::before {
+  content: none;
+}
+
 .race-info__notes {
   list-style: none;
   margin-top: 12px;
@@ -1143,6 +1197,37 @@ a.pagination__item:hover {
   margin-top: 8px;
   font-size: 13px;
   color: #888;
+}
+
+.race-info__entry-deadline {
+  margin-top: 32px;
+  padding: 28px 24px;
+  border: 1px solid var(--teal);
+  border-radius: 8px;
+  background: rgba(244, 190, 227, 0.1);
+  text-align: center;
+}
+
+.race-info__entry-deadline-label {
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.race-info__entry-deadline-date {
+  font-family: var(--display);
+  font-size: clamp(28px, 5vw, 40px);
+  letter-spacing: 0.04em;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.race-info__entry-deadline-date small {
+  font-size: 0.55em;
+  letter-spacing: 0.06em;
+  margin-left: 0.1em;
 }
 
 @media (max-width: 720px) {
@@ -1345,21 +1430,24 @@ a.pagination__item:hover {
 .a1beyond__form {
   max-width: 640px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.a1beyond__form-link {
-  display: block;
+.a1beyond__form .entry__cta,
+.a1beyond__form .entry__btn {
+  width: 100%;
   padding: 24px;
-  border: 1px solid currentColor;
-  color: inherit;
-  text-decoration: none;
-  text-align: center;
+  font-size: 15px;
   letter-spacing: 0.05em;
-  transition: opacity 0.3s ease;
+  line-height: 1.5;
+  box-sizing: border-box;
 }
 
-.a1beyond__form-link:hover {
-  opacity: 0.7;
+.a1beyond__form .entry__btn {
+  flex: none;
+  display: block;
 }
 
 /* Sponsor */
@@ -1554,6 +1642,36 @@ a.pagination__item:hover {
     overflow-wrap: anywhere;
   }
   .concept__heading { font-size: 26px; }
+  .feature__split:first-of-type .feature__col {
+    flex: 1 1 100%;
+  }
+  .concept__repeat {
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.85;
+    text-align: left;
+    text-wrap: pretty;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .concept__repeat br,
+  .concept__br {
+    display: none;
+  }
+  .concept__repeat p,
+  .concept__repeat-types p {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .concept__repeat p {
+    margin-bottom: 1em;
+  }
+  .concept__repeat-types {
+    margin: 1em 0;
+    padding: 0.8em 0;
+  }
   .entry__top {
     grid-template-columns: 1fr;
     gap: 32px;
