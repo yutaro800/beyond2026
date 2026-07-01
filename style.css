@@ -438,9 +438,10 @@ a.pagination__item:hover {
 
 .concept__heading {
   font-family: var(--display);
-  font-size: 40px;
+  font-size: clamp(13px, calc((100vw - 2 * var(--section-pad-x)) / 17.5), 40px);
   letter-spacing: 0.03em;
   margin-bottom: 40px;
+  white-space: nowrap;
 }
 
 .concept__repeat {
@@ -1639,7 +1640,6 @@ a.pagination__item:hover {
   .race-info__pace {
     overflow-wrap: anywhere;
   }
-  .concept__heading { font-size: 26px; }
   .feature__split:first-of-type .feature__col {
     flex: 1 1 100%;
   }
