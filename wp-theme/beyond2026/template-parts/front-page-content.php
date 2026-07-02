@@ -1,42 +1,18 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BEYOND 2026</title>
-<link rel="shortcut icon" href="images/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<?php
+/**
+ * トップページ本文（index.html 相当）
+ */
 
-<header class="header">
-  <a href="#" class="header__logo"><img src="images/beyond-logo.png" alt="BEYOND"></a>
-  <nav class="header__nav">
-    <a href="#">ENTRY</a>
-    <a href="news.html">NEWS</a>
-    <a href="#shop">SHOP</a>
-    <a href="https://www.instagram.com/beyond_marathon/" class="header__icon" aria-label="Instagram" target="_blank" rel="noopener">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-  </nav>
-</header>
-
+defined( 'ABSPATH' ) || exit;
+?>
 <section class="hero">
   <div class="hero__visual hero__visual--photo">
-    <div class="hero__slide is-active" style="background-image: url('images/hero-visual-01.jpg');"></div>
-    <div class="hero__slide" style="background-image: url('images/hero-visual-02.jpg');"></div>
-    <div class="hero__slide" style="background-image: url('images/hero-visual-03.jpg');"></div>
-    <div class="hero__slide" style="background-image: url('images/hero-visual-04.jpg');"></div>
-    <div class="hero__slide" style="background-image: url('images/hero-visual-05.jpg');"></div>
-    <div class="hero__slide" style="background-image: url('images/hero-visual-06.jpg');"></div>
-    <div class="hero__slide" style="background-image: url('images/hero-visual-07.jpg');"></div>
+    <?php for ( $i = 1; $i <= 7; $i++ ) : ?>
+    <div class="hero__slide<?php echo 1 === $i ? ' is-active' : ''; ?>" style="<?php echo esc_attr( beyond_bg_style( sprintf( 'hero-visual-%02d.jpg', $i ) ) ); ?>"></div>
+    <?php endfor; ?>
     <div class="hero__overlay">
       <h1 class="hero__logo">
-        <img src="images/beyond-logo.png" alt="BEYOND">
+        <img src="<?php echo esc_url( beyond_asset_url( 'beyond-logo.png' ) ); ?>" alt="BEYOND">
       </h1>
     </div>
   </div>
@@ -48,27 +24,7 @@
     <span class="section__title-en" aria-hidden="true">NEWS</span>
     <span class="section__title-ja">ニュース</span>
   </h2>
-  <!-- WP:NEWS-LATEST — 最新4件を WP 投稿から動的取得。テンプレート元: site/news.html -->
-  <ul class="news__list">
-    <li class="news__item">
-      <span class="news__date">2026/06/01</span>
-      <a href="#" class="news__headline">ニュースタイトルが入ります（仮）</a>
-    </li>
-    <li class="news__item news__item--placeholder">
-      <span class="news__date">2026/XX/XX</span>
-      <span class="news__headline">ニュースタイトルが入ります（仮）</span>
-    </li>
-    <li class="news__item news__item--placeholder">
-      <span class="news__date">2026/XX/XX</span>
-      <span class="news__headline">ニュースタイトルが入ります（仮）</span>
-    </li>
-    <li class="news__item news__item--placeholder">
-      <span class="news__date">2026/XX/XX</span>
-      <span class="news__headline">ニュースタイトルが入ります（仮）</span>
-    </li>
-  </ul>
-  <!-- WP:NEWS-ARCHIVE-LINK — WP 連携後は NEWS 一覧ページ URL に差し替え -->
-  <a href="news.html" class="news__more">ニュース一覧へ</a>
+  <?php get_template_part( 'template-parts/news', 'latest' ); ?>
   </div>
 </section>
 
@@ -78,7 +34,7 @@
     <span class="section__title-en" aria-hidden="true">CONCEPT</span>
     <span class="section__title-ja">コンセプト</span>
   </h2>
-  <div class="concept__logo"><img src="images/beyond-logo-full.jpg" alt="BEYOND produced by RUNNING SCIENCE LAB"></div>
+  <div class="concept__logo"><img src="<?php echo esc_url( beyond_asset_url( 'beyond-logo-full.jpg' ) ); ?>" alt="BEYOND produced by RUNNING SCIENCE LAB"></div>
   <h2 class="concept__heading">#世界一自分を超えられるレース</h2>
   <div class="concept__repeat">
     <p class="concept__repeat-lead">Beyond2026は、「世界一自分を超えられるレース」をテーマに開催します。</p>
@@ -110,7 +66,7 @@
   <div class="feature__split">
     <div class="feature__col">
       <div class="feature__col-head">
-        <div class="feature__col-photo"><img src="images/feature-pace.png" alt="BEYONDのペースメーカー"></div>
+        <div class="feature__col-photo"><img src="<?php echo esc_url( beyond_asset_url( 'feature-pace.png' ) ); ?>" alt="BEYONDのペースメーカー"></div>
         <h3 class="feature__col-title">PACE</h3>
       </div>
       <div class="feature__col-body">
@@ -120,7 +76,7 @@
     </div>
     <div class="feature__col">
       <div class="feature__col-head">
-        <div class="feature__col-photo"><img src="images/feature-course.png" alt="BEYONDのフラットコース"></div>
+        <div class="feature__col-photo"><img src="<?php echo esc_url( beyond_asset_url( 'feature-course.png' ) ); ?>" alt="BEYONDのフラットコース"></div>
         <h3 class="feature__col-title">COURSE</h3>
       </div>
       <div class="feature__col-body">
@@ -133,7 +89,7 @@
   <div class="feature__split feature__split--support">
     <div class="feature__col feature__col--road">
       <div class="feature__col-head">
-        <div class="feature__col-photo"><img src="images/feature-road-to-beyond.jpg" alt="ROAD TO BEYOND 練習会"></div>
+        <div class="feature__col-photo"><img src="<?php echo esc_url( beyond_asset_url( 'feature-road-to-beyond.jpg' ) ); ?>" alt="ROAD TO BEYOND 練習会"></div>
         <h3 class="feature__col-title">ROAD TO BEYOND</h3>
       </div>
       <div class="feature__col-body">
@@ -151,7 +107,7 @@
     <div class="feature__col feature__col--coach">
       <div class="feature__col-head">
         <div class="feature__col-photo feature__col-photo--logo">
-          <img src="images/ist-track-club-logo.png" alt="Ist陸上競技部">
+          <img src="<?php echo esc_url( beyond_asset_url( 'ist-track-club-logo.png' ) ); ?>" alt="Ist陸上競技部">
         </div>
         <h3 class="feature__col-title">PERSONAL TRAINING</h3>
       </div>
@@ -174,12 +130,12 @@
 
   <div class="entry__top">
     <div class="entry__left entry__left--ticket">
-      <a href="#" class="entry__cta">エントリーはこちら</a>
+      <a href="<?php echo esc_url( BEYOND_ENTRY_URL ); ?>" class="entry__cta" target="_blank" rel="noopener">エントリーはこちら</a>
       <p class="entry__period-label">エントリー期間</p>
       <p class="entry__period">８/７　１９：００<br>~１１/３０　２３：５９迄</p>
       <div class="entry__left-buttons">
-        <a href="race-info.html" class="entry__btn">大会要項</a>
-        <a href="guidelines.html" class="entry__btn">競技注意事項</a>
+        <a href="<?php echo esc_url( beyond_page_url( 'race-info' ) ); ?>" class="entry__btn">大会要項</a>
+        <a href="<?php echo esc_url( beyond_page_url( 'guidelines' ) ); ?>" class="entry__btn">競技注意事項</a>
         <a href="https://moshicom.com/h/3tfqjftrzag4sgkc0g8" class="entry__btn" target="_blank" rel="noopener">駐車場・バスチケット</a>
       </div>
     </div>
@@ -238,13 +194,6 @@
             <p class="shop__card-name">完走セット（準備中）</p>
             <p class="shop__card-price">¥3,500</p>
           </article>
-          <!-- 商品追加時: 下記をコピーして shop__grid 内に並べる
-          <article class="shop__card">
-            <div class="shop__card-photo"></div>
-            <p class="shop__card-name">商品名</p>
-            <p class="shop__card-price">¥0,000</p>
-          </article>
-          -->
         </div>
       </div>
     </div>
@@ -260,11 +209,11 @@
   <h2 class="section__title">
     <span class="section__title-en section__title-en--compact">A1 BEYOND</span>
   </h2>
-  <div class="a1beyond__logo"><img src="images/a1beyond-logo.png" alt="A1 BEYOND feat.FH"></div>
+  <div class="a1beyond__logo"><img src="<?php echo esc_url( beyond_asset_url( 'a1beyond-logo.png' ) ); ?>" alt="A1 BEYOND feat.FH"></div>
   <p class="a1beyond__text">昨年ハイレベルな争いが繰り広げられたアマチュアランナーNo.1を決めるレースA1BEYONDを今年も開催。<br>皆様の挑戦をお待ちしております。</p>
   <div class="a1beyond__form">
     <a href="https://forms.gle/Mr9T9uRJqxZLyVYz7" class="entry__cta" target="_blank" rel="noopener">応募フォームはこちら</a>
-    <a href="a1beyond-info.html" class="entry__btn">募集要項</a>
+    <a href="<?php echo esc_url( beyond_page_url( 'a1beyond-info' ) ); ?>" class="entry__btn">募集要項</a>
   </div>
   </div>
 </section>
@@ -278,22 +227,22 @@
 
   <div class="sponsor__tier">
     <div class="sponsor__logos sponsor__logos--gold">
-      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="images/sponsor-charbon.png" alt="charbon"></div>
-      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="images/sponsor-orewa-sesshu.png" alt="オレは摂取す"></div>
+      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="<?php echo esc_url( beyond_asset_url( 'sponsor-charbon.png' ) ); ?>" alt="charbon"></div>
+      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="<?php echo esc_url( beyond_asset_url( 'sponsor-orewa-sesshu.png' ) ); ?>" alt="オレは摂取す"></div>
     </div>
   </div>
 
   <div class="sponsor__tier">
     <div class="sponsor__logos sponsor__logos--silver">
-      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="images/sponsor-precision.png" alt="プレシジョン"></div>
-      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="images/ist-track-club-logo.png" alt="Ist陸上競技部"></div>
+      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="<?php echo esc_url( beyond_asset_url( 'sponsor-precision.png' ) ); ?>" alt="プレシジョン"></div>
+      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="<?php echo esc_url( beyond_asset_url( 'ist-track-club-logo.png' ) ); ?>" alt="Ist陸上競技部"></div>
     </div>
   </div>
 
   <div class="sponsor__tier">
     <div class="sponsor__logos sponsor__logos--bronze">
-      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="images/sponsor-reto.png" alt="RETO"></div>
-      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="images/sponsor-natori.png" alt="中華そばナトリ"></div>
+      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="<?php echo esc_url( beyond_asset_url( 'sponsor-reto.png' ) ); ?>" alt="RETO"></div>
+      <div class="sponsor__logo-frame sponsor__logo-frame--real"><img src="<?php echo esc_url( beyond_asset_url( 'sponsor-natori.png' ) ); ?>" alt="中華そばナトリ"></div>
     </div>
   </div>
   </div>
@@ -311,17 +260,3 @@
   </div>
   </div>
 </section>
-
-<footer class="footer">
-  <p class="footer__line">
-    <a href="index.html" class="footer__link">BEYOND</a><span class="footer__sep" aria-hidden="true">/</span><a href="#" class="footer__link">2025</a><span class="footer__sep" aria-hidden="true">/</span><a href="#" class="footer__link">2023</a>
-  </p>
-  <p class="footer__line footer__line--sub">
-    <a href="https://rslab.tokyo/beyond-contact" class="footer__link" target="_blank" rel="noopener">CONTACT</a><span class="footer__sep" aria-hidden="true">/</span><a href="https://rslab.tokyo" class="footer__link" target="_blank" rel="noopener">RUNNING SCIENCE LAB</a>
-  </p>
-  <p class="footer__copyright">©RUNNING SCIENCE LAB</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>

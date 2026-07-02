@@ -27,22 +27,8 @@ img {
   --gray-light2: #ebebeb;
   --gray-dark: #4b4746;
   --display: "Anton", "Noto Sans JP", sans-serif;
-  --font-dnp: "DNP Shuei Gothic Gin", "Noto Sans JP", sans-serif;
   --header-h: 64px;
   --hero-gap: clamp(16px, 2.5vw, 24px);
-}
-
-@font-face {
-  font-family: "DNP Shuei Gothic Gin";
-  src:
-    local("DNPShueiGoGinStd-B"),
-    local("DNP Shuei Gothic Gin Std B"),
-    local("DNP秀英角ゴシック銀 Std B"),
-    local("FOT-DNP Shuei Gothic Gin Std B"),
-    url("fonts/DNPShueiGoGinStd-B.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
 }
 
 /* Placeholder image frame */
@@ -105,7 +91,7 @@ img {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  font-family: var(--font-dnp);
+  font-family: "Noto Sans JP", sans-serif;
   font-size: clamp(24px, 3.8vw, 40px);
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -419,6 +405,17 @@ a.pagination__item:hover {
 .pagination__item.is-current {
   color: #111;
   font-weight: 700;
+}
+
+.news-single__body {
+  max-width: 960px;
+  margin: 32px auto 0;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.news-single__body p + p {
+  margin-top: 1em;
 }
 
 /* Concept */
@@ -837,6 +834,22 @@ a.pagination__item:hover {
   gap: 4px;
   white-space: normal;
   line-height: 1.3;
+}
+
+.entry__cta-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.entry__cta-icon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
 .entry__cta-soon {
@@ -1654,7 +1667,8 @@ a.pagination__item:hover {
     min-width: 0;
     font-size: 14px;
     line-height: 1.85;
-    text-align: left;
+    text-align: justify;
+    text-justify: inter-character;
     text-wrap: pretty;
   }
   .concept__repeat br,
