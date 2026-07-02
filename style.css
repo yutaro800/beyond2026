@@ -1622,7 +1622,7 @@ a.pagination__item:hover {
   .section { padding: 64px 24px; --section-pad-x: 24px; }
   .section__title { margin-bottom: 36px; }
   .section__title-en { font-size: clamp(52px, 14vw, 80px); }
-  .section__title-en--compact { font-size: clamp(40px, 12vw, 64px); }
+  .section__title-en--compact { font-size: clamp(52px, 14vw, 80px); }
   .section__title-ja { font-size: clamp(20px, 5.5vw, 30px); letter-spacing: 0.1em; }
   .section__title-ja--long { font-size: clamp(13px, 3.2vw, 22px); letter-spacing: 0.06em; }
   .guidelines .section__title {
@@ -1631,7 +1631,6 @@ a.pagination__item:hover {
     overflow: hidden;
   }
   .guidelines .section__title-en {
-    font-size: clamp(28px, 8.5vw, 48px);
     letter-spacing: 0;
     padding-right: 12px;
   }
@@ -1645,7 +1644,6 @@ a.pagination__item:hover {
     overflow: hidden;
   }
   .race-info .section__title-en {
-    font-size: clamp(36px, 11vw, 56px);
     letter-spacing: 0;
     padding-right: 12px;
   }
@@ -1668,17 +1666,15 @@ a.pagination__item:hover {
     font-size: 14px;
     line-height: 1.85;
     text-align: justify;
-    text-justify: inter-character;
-    text-wrap: pretty;
+    text-justify: inter-ideograph;
   }
   .concept__repeat br,
   .concept__br {
     display: none;
   }
   .concept__repeat p,
-  .concept__repeat-types,
-  .concept__repeat-types p {
-    display: inline;
+  .concept__repeat-types {
+    display: contents;
     margin: 0;
     padding: 0;
   }
