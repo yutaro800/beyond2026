@@ -430,7 +430,32 @@ a.pagination__item:hover {
 
 /* Concept */
 .concept {
+  position: relative;
   text-align: center;
+  overflow: hidden;
+}
+
+.concept::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/concept-bg-photo.png") center / cover no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.concept::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.concept > .fade-in {
+  position: relative;
+  z-index: 1;
 }
 
 .concept__logo {
