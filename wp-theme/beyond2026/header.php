@@ -5,8 +5,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$is_front = is_front_page();
-$home     = home_url( '/' );
+$is_front = beyond_is_top_page();
+$home     = beyond_home_url();
 $news_url = beyond_news_archive_url();
 $shop_url = $is_front ? '#shop' : $home . '#shop';
 ?>

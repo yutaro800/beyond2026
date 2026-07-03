@@ -28,9 +28,24 @@ const heroSlides = document.querySelectorAll(".hero__slide");
 if (heroSlides.length > 1) {
   let activeIndex = 0;
   setInterval(() => {
-    heroSlides[activeIndex].classList.remove("is-active");
+    const current = heroSlides[activeIndex];
     activeIndex = (activeIndex + 1) % heroSlides.length;
-    heroSlides[activeIndex].classList.add("is-active");
+    const next = heroSlides[activeIndex];
+
+    next.classList.add("is-active");
+    current.classList.add("is-leaving");
+    current.classList.remove("is-active");
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        current.classList.add("is-faded");
+      });
+    });
+
+    current.addEventListener("transitionend", (event) => {
+      if (event.propertyName !== "opacity") return;
+      current.classList.remove("is-leaving", "is-faded");
+    }, { once: true });
   }, 5000);
 }
 

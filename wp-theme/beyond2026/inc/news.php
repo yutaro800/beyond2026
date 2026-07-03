@@ -49,12 +49,16 @@ function beyond_news_archive_url(): string {
 		}
 	}
 
-	$page = get_page_by_path( 'news' );
+	$base = beyond_base_slug();
+	$page = get_page_by_path( $base ? $base . '/news' : 'news' );
+	if ( ! $page && $base ) {
+		$page = get_page_by_path( 'news' );
+	}
 	if ( $page ) {
 		return get_permalink( $page );
 	}
 
-	return home_url( '/news/' );
+	return trailingslashit( beyond_home_url() ) . 'news/';
 }
 
 /**

@@ -10,6 +10,7 @@ define( 'BEYOND_ENTRY_URL', 'https://moshicom.com/148834' );
 define( 'BEYOND_NEWS_LATEST_COUNT', 4 );
 define( 'BEYOND_NEWS_PER_PAGE', 10 );
 
+require_once get_template_directory() . '/inc/urls.php';
 require_once get_template_directory() . '/inc/news.php';
 
 /**
@@ -97,58 +98,5 @@ function beyond_bg_style( string $file ): string {
  * サブページ URL（静的 HTML から WP 固定ページへ移行するまでの暫定）
  */
 function beyond_page_url( string $slug ): string {
-	return home_url( '/' . ltrim( $slug, '/' ) . '/' );
+	return trailingslashit( beyond_home_url() ) . ltrim( $slug, '/' ) . '/';
 }
-
-/**
- * 管理画面: 簡易設定
- */
-function beyond2026_register_settings(): void {
-	register_setting(
-		'general',
-		'beyond_news_category',
-		array(
-			'type'              => 'string',
-			'sanitize_callback' => 'sanitize_title',
-			'default'           => 'beyond',
-		)
-	);
-	register_setting(
-		'general',
-		'beyond_news_page_id',
-		array(
-			'type'              => 'integer',
-			'sanitize_callback' => 'absint',
-			'default'           => 0,
-		)
-	);
-
-	add_settings_field(
-		'beyond_news_category',
-		'BEYOND NEWS カテゴリ slug',
-		static function (): void {
-			$value = get_option( 'beyond_news_category', 'beyond' );
-			printf(
-				'<input type="text" name="beyond_news_category" value="%s" class="regular-text" />',
-				esc_attr( $value )
-			);
-			echo '<p class="description">rslab.tokyo 上で BEYOND 用に使う投稿カテゴリの slug（例: beyond）</p>';
-		},
-		'general'
-	);
-
-	add_settings_field(
-		'beyond_news_page_id',
-		'BEYOND NEWS 一覧ページ ID',
-		static function (): void {
-			$value = (int) get_option( 'beyond_news_page_id', 0 );
-			printf(
-				'<input type="number" name="beyond_news_page_id" value="%d" class="small-text" min="0" />',
-				$value
-			);
-			echo '<p class="description">「NEWS 一覧」固定ページの ID。未設定時は slug <code>news</code> を参照。</p>';
-		},
-		'general'
-	);
-}
-add_action( 'admin_init', 'beyond2026_register_settings' );
