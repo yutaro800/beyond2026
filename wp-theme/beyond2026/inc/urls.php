@@ -14,6 +14,15 @@ function beyond_base_slug(): string {
 }
 
 /**
+ * 過去年度アーカイブ URL（例: /beyond/2023/）
+ *
+ * @param string $year 年度（4桁）。
+ */
+function beyond_archive_url( string $year ): string {
+	return trailingslashit( home_url( '/' . beyond_base_slug() . '/' . sanitize_title( $year ) ) );
+}
+
+/**
  * BEYOND トップ URL
  */
 function beyond_home_url(): string {

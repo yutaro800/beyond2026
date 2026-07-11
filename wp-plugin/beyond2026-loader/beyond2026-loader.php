@@ -2,14 +2,14 @@
 /**
  * Plugin Name: BEYOND 2026 Loader
  * Description: rslab.tokyo 本体 WordPress 内で /beyond/ 配下と BEYOND カテゴリ投稿に beyond2026 テーマを適用します。
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: RUNNING SCIENCE LAB
  * Text Domain: beyond2026-loader
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BEYOND2026_LOADER_VERSION', '1.0.0' );
+define( 'BEYOND2026_LOADER_VERSION', '1.0.1' );
 define( 'BEYOND2026_THEME', 'beyond2026' );
 
 /**
@@ -18,6 +18,22 @@ define( 'BEYOND2026_THEME', 'beyond2026' );
 function beyond2026_loader_base_slug(): string {
 	$slug = get_option( 'beyond_base_slug', 'beyond' );
 	return is_string( $slug ) ? sanitize_title( $slug ) : 'beyond';
+}
+
+/**
+ * 過去年度アーカイブ（別 WP 等）でテーマ切替を除外するパス
+ *
+ * @return string[] リクエストパス（先頭・末尾スラッシュなし）のプレフィックス。
+ */
+function beyond2026_loader_excluded_path_prefixes(): array {
+	$base = beyond2026_loader_base_slug();
+	if ( ! $base ) {
+		return array();
+	}
+
+	return array(
+		$base . '/2023',
+	);
 }
 
 /**
@@ -44,6 +60,12 @@ function beyond2026_loader_should_use_theme(): bool {
 
 	$base = beyond2026_loader_base_slug();
 	$path = trim( (string) parse_url( wp_unslash( $_SERVER['REQUEST_URI'] ?? '/' ), PHP_URL_PATH ), '/' );
+
+	foreach ( beyond2026_loader_excluded_path_prefixes() as $excluded ) {
+		if ( $path === $excluded || str_starts_with( $path, $excluded . '/' ) ) {
+			return $result = false;
+		}
+	}
 
 	if ( $base && ( $path === $base || str_starts_with( $path, $base . '/' ) ) ) {
 		return $result = true;
