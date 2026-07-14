@@ -31,10 +31,9 @@ defined( 'ABSPATH' ) || exit;
 <section id="concept" class="concept section section--black">
   <div class="fade-in">
   <h2 class="section__title">
-    <span class="section__title-en" aria-hidden="true">CONCEPT</span>
-    <span class="section__title-ja">コンセプト</span>
+    <span class="section__title-en section__title-en--compact" aria-hidden="true">CONCEPT</span>
   </h2>
-  <div class="concept__logo"><img src="<?php echo esc_url( beyond_asset_url( 'beyond-logo-full.jpg' ) ); ?>" alt="BEYOND produced by RUNNING SCIENCE LAB"></div>
+  <div class="concept__logo"><img src="<?php echo esc_url( beyond_asset_url( 'beyond-logo-full.png' ) ); ?>" alt="BEYOND produced by RUNNING SCIENCE LAB"></div>
   <h2 class="concept__heading">#世界一自分を超えられるレース</h2>
   <div class="concept__repeat">
     <p class="concept__repeat-lead">Beyond2026は、「世界一自分を超えられるレース」をテーマに開催します。</p>
@@ -170,7 +169,7 @@ defined( 'ABSPATH' ) || exit;
       <a href="https://forms.gle/y62hcPFHfuzGdXcu8" class="entry__cta" target="_blank" rel="noopener">ボランティア募集</a>
       <p class="entry__period-label">募集内容</p>
       <p class="entry__period">大会運営を支えるボランティアを募集しています。<br>受付・給水・フィニッシュエリアなど、各ポジションでご参加いただけます。</p>
-      <p class="entry__note">※詳細募集は8/7以降お知らせします</p>
+      <p class="entry__note">今後のスケジュール<br>8月1日（土）〜10月31日（土）ボランティア募集期間<br>11月中旬　案内送付（マニュアル、事前説明会案内）<br>12月上旬　事前説明会実施　※自由参加</p>
     </div>
   </div>
   </div>
@@ -191,8 +190,8 @@ defined( 'ABSPATH' ) || exit;
         <div class="shop__grid">
           <article class="shop__card">
             <div class="shop__card-photo"></div>
-            <p class="shop__card-name">完走セット（準備中）</p>
-            <p class="shop__card-price">¥3,500</p>
+            <p class="shop__card-name">完走セット</p>
+            <p class="shop__card-price">¥0</p>
           </article>
         </div>
       </div>

@@ -219,10 +219,12 @@ img {
   margin-right: auto;
 }
 
+.concept .section__title-ja,
 .a1beyond .section__title-ja {
   display: none;
 }
 
+.concept .section__title-en,
 .a1beyond .section__title-en {
   opacity: 1;
   color: var(--teal);
