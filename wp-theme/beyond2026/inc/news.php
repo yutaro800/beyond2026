@@ -26,6 +26,11 @@ function beyond_news_query_args( int $count ): array {
 		$args['category_name'] = $category;
 	}
 
+	$date_query = beyond_news_edition_date_query();
+	if ( $date_query ) {
+		$args['date_query'] = $date_query;
+	}
+
 	return $args;
 }
 

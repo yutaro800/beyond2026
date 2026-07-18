@@ -5,12 +5,21 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BEYOND2026_VERSION', '1.0.0' );
+define( 'BEYOND2026_VERSION', '1.0.3' );
 define( 'BEYOND_ENTRY_URL', 'https://moshicom.com/148834' );
 define( 'BEYOND_NEWS_LATEST_COUNT', 4 );
 define( 'BEYOND_NEWS_PER_PAGE', 10 );
+define( 'BEYOND_NEWS_YEAR', 2026 );
 
 require_once get_template_directory() . '/inc/urls.php';
+
+$beyond_edition_file = WP_PLUGIN_DIR . '/beyond2026-loader/inc/edition.php';
+if ( is_readable( $beyond_edition_file ) ) {
+	require_once $beyond_edition_file;
+} else {
+	require_once get_template_directory() . '/inc/edition.php';
+}
+
 require_once get_template_directory() . '/inc/news.php';
 
 /**
@@ -55,6 +64,35 @@ function beyond2026_enqueue_assets(): void {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'beyond2026_enqueue_assets' );
+
+/**
+ * BEYOND 用ファビコン（本体 WP のサイトアイコンより優先）
+ */
+function beyond2026_favicon_url(): string {
+	$file = file_exists( get_template_directory() . '/assets/images/favicon.png' )
+		? 'favicon.png'
+		: 'favicon.ico';
+
+	return add_query_arg( 'v', BEYOND2026_VERSION, beyond_asset_url( $file ) );
+}
+
+function beyond2026_remove_default_site_icon(): void {
+	remove_action( 'wp_head', 'wp_site_icon', 99 );
+}
+add_action( 'wp_head', 'beyond2026_remove_default_site_icon', 0 );
+
+function beyond2026_print_favicon(): void {
+	$icon = beyond2026_favicon_url();
+	printf(
+		'<link rel="icon" type="image/png" href="%s" sizes="32x32">' . "\n",
+		esc_url( $icon )
+	);
+	printf(
+		'<link rel="apple-touch-icon" href="%s">' . "\n",
+		esc_url( $icon )
+	);
+}
+add_action( 'wp_head', 'beyond2026_print_favicon', 100 );
 
 /**
  * NEWS 一覧の1ページ件数

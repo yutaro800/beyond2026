@@ -15,7 +15,8 @@ $shop_url = $is_front ? '#shop' : $home . '#shop';
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="<?php echo esc_url( beyond_asset_url( 'favicon.ico' ) ); ?>">
+<link rel="icon" type="image/png" href="<?php echo esc_url( beyond2026_favicon_url() ); ?>" sizes="32x32">
+<link rel="apple-touch-icon" href="<?php echo esc_url( beyond2026_favicon_url() ); ?>">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

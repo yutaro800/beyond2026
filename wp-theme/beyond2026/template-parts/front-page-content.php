@@ -190,7 +190,7 @@ defined( 'ABSPATH' ) || exit;
         <div class="shop__grid">
           <article class="shop__card">
             <div class="shop__card-photo"></div>
-            <p class="shop__card-name">完走セット</p>
+            <p class="shop__card-name">coming soon</p>
             <p class="shop__card-price">¥0</p>
           </article>
         </div>

@@ -1,30 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guidelines | BEYOND 2026</title>
-<link rel="shortcut icon" href="images/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<?php
+/**
+ * 競技注意事項コンテンツ
+ */
 
-<header class="header">
-  <a href="index.html" class="header__logo"><img src="images/beyond-logo.png" alt="BEYOND"></a>
-  <nav class="header__nav">
-    <a href="https://moshicom.com/148834" target="_blank" rel="noopener">ENTRY</a>
-    <a href="news.html">NEWS</a>
-    <a href="index.html#shop">SHOP</a>
-    <a href="https://www.instagram.com/beyond_marathon/" class="header__icon" aria-label="Instagram" target="_blank" rel="noopener">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-  </nav>
-</header>
-
+defined( 'ABSPATH' ) || exit;
+?>
 <section class="guidelines section section--black">
   <div class="fade-in">
   <h2 class="section__title">
@@ -53,17 +33,3 @@
   </ol>
   </div>
 </section>
-
-<footer class="footer">
-  <p class="footer__line">
-    <a href="index.html" class="footer__link">BEYOND</a><span class="footer__sep" aria-hidden="true">/</span><a href="https://beyond2025rslab.com/top/" class="footer__link" target="_blank" rel="noopener">2025</a><span class="footer__sep" aria-hidden="true">/</span><a href="https://rslab.tokyo/beyond/" class="footer__link">2023</a>
-  </p>
-  <p class="footer__line footer__line--sub">
-    <a href="https://rslab.tokyo/beyond-contact" class="footer__link" target="_blank" rel="noopener">CONTACT</a><span class="footer__sep" aria-hidden="true">/</span><a href="https://rslab.tokyo" class="footer__link" target="_blank" rel="noopener">RUNNING SCIENCE LAB</a>
-  </p>
-  <p class="footer__copyright">©RUNNING SCIENCE LAB</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>

@@ -2,15 +2,34 @@
 /**
  * Plugin Name: BEYOND 2026 Loader
  * Description: rslab.tokyo 本体 WordPress 内で /beyond/ 配下と BEYOND カテゴリ投稿に beyond2026 テーマを適用します。
- * Version: 1.0.1
+ * Version: 1.0.3
  * Author: RUNNING SCIENCE LAB
  * Text Domain: beyond2026-loader
  */
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'BEYOND2026_LOADER_VERSION', '1.0.1' );
+define( 'BEYOND2026_LOADER_VERSION', '1.0.3' );
 define( 'BEYOND2026_THEME', 'beyond2026' );
+
+/**
+ * 年度判定ヘルパーを読み込む（プラグイン内を優先）
+ */
+function beyond2026_loader_load_edition_helpers(): void {
+	static $loaded = false;
+
+	if ( $loaded || function_exists( 'beyond_post_in_news_edition' ) ) {
+		$loaded = true;
+		return;
+	}
+
+	$edition_file = plugin_dir_path( __FILE__ ) . 'inc/edition.php';
+	if ( is_readable( $edition_file ) ) {
+		require_once $edition_file;
+	}
+
+	$loaded = true;
+}
 
 /**
  * BEYOND セクションのベース slug（プラグイン用）
@@ -76,6 +95,11 @@ function beyond2026_loader_should_use_theme(): bool {
 		$post = get_post( $post_id );
 		$cat  = get_option( 'beyond_news_category', 'beyond' );
 		if ( $post && 'post' === $post->post_type && is_string( $cat ) && has_category( sanitize_title( $cat ), $post ) ) {
+			beyond2026_loader_load_edition_helpers();
+			if ( ! function_exists( 'beyond_post_in_news_edition' ) || ! beyond_post_in_news_edition( $post ) ) {
+				return $result = false;
+			}
+
 			return $result = true;
 		}
 	}
