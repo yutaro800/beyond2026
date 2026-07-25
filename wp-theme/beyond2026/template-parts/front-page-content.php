@@ -242,6 +242,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="sponsor__logos sponsor__logos--bronze">
       <a href="https://retorunning.com/" class="sponsor__logo-frame sponsor__logo-frame--real" target="_blank" rel="noopener noreferrer"><img src="<?php echo esc_url( beyond_asset_url( 'sponsor-reto.png' ) ); ?>" alt="RETO"></a>
       <a href="https://www.instagram.com/chukasoba_natori/" class="sponsor__logo-frame sponsor__logo-frame--real" target="_blank" rel="noopener noreferrer"><img src="<?php echo esc_url( beyond_asset_url( 'sponsor-natori.png' ) ); ?>" alt="中華そばナトリ"></a>
+      <a href="https://theekiden.com/" class="sponsor__logo-frame sponsor__logo-frame--real" target="_blank" rel="noopener noreferrer"><img src="<?php echo esc_url( beyond_asset_url( 'sponsor-ekiden-podcast.png' ) ); ?>" alt="THE EKIDEN PODCAST"></a>
     </div>
   </div>
   </div>

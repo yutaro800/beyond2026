@@ -1,0 +1,5 @@
+# 本番へ scp するファイル（site/ からの相対パス。1行1ファイル）
+# デプロイ成功後にこのファイルを空にする（または行を削除）
+
+wp-theme/beyond2026/template-parts/front-page-content.php
+images/sponsor-ekiden-podcast.png
